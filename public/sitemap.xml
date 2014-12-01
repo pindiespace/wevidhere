@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	<url>
+
+		<loc>http://plyojump.com/games/WeAreHere</loc>
+
+		<lastmod>2014-11-14</lastmod>
+
+		<changefreq>monthly</changefreq>
+
+		<priority>0.8</priority>
+
+	</url>
+
+	<url>
+	
+   		<loc>http://plyojump.com/games/WeAreHere/about.html</loc>
+
+   		<lastmod>2014-1-14</lastmod>
+
+   		<changefreq>yearly</changefreq>
+
+   		<priority>0.4</priority>
+
+	</url>
+
+	<url>
+
+
+	</url>
+
+		<loc>http://plyojump.com/games/WeAreHere/contact.html</loc>
+
+		<lastmod>2014-1-14</lastmod>
+
+		<changefreq>yearly</changefreq>
+		
+		<priority>0.7</priority>
+
+	<url>
+
+		<loc>http://plyojump.com/games/WeAreHere/jobs.html</loc>
+
+		<lastmod>2014-1-14</lastmod>
+
+		<changefreq>weekly</changefreq>
+
+		<priority>0.8</priority>
+
+	</url>
+
+</urlset> 

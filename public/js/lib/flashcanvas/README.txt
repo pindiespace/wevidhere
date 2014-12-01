@@ -1,0 +1,1 @@
+Flash Canvas was modified to look for older ActiveX versions of XMLHttpRequest

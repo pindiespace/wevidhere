@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Vegan Meat Market - Contact the Creators</title>
+
+	<!--SEO data-->
+	<meta name="description" content="Vegan Meat Market presents WeVidHere, and app which lets people find each other in a social sharing network, and link updates of their personal audio, video and secrets">
+
+	<!--Google Fonts CDN, if available -->
+	<link href='http://fonts.googleapis.com/css?family=Englebert' rel='stylesheet' type='text/css'>
+
+	<!--normalize styles between browsers-->
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<!--app specific styles-->
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!--Modernizr feature detection library-->
+	<script src="js/modernizr.js"></script>
+
+</head>
+
+<!--microdata describing this as a web page. 
+The item properties allow us to define our ARIA support to search engines -->
+<body itemscope itemtype="http://schema.org/WebPage">
+
+	<!--accessiblity properties of this page
+		images have alt text
+		page can be read correcly via headings with screen readers
+		keyboard and mouse can both be used to navigate page
+		ARIA features implemented
+		@link http://www.w3.org/wiki/WebSchemas/Accessibility
+	-->
+
+	<meta itemprop="accessibilityFeature" content="alternativeText">
+	<meta itemprop="accessibilityFeature" content="readingOrder">
+	<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+	<meta itemprop="accessibilityControl" content="fullMouseControl">
+	<meta itemprop="accessibilityAPI" content="ARIA">
+
+	<!-- ********************** BEGIN VISIBLE PAGE **************************
+	-->
+
+	<!--header on web wrapper, hidden when screen disappears note the use of ARIA role to define it to screen readers
+	@link http://www.paciellogroup.com/blog/2008/12/testing-wai-aria-role-support/
+	-->
+	<header role="banner">
+		<!--nested heading of topic for the whole page-->
+		<h1 itemprop="name">Contact Vegan Meat Market</h1>
+		<img itemprop="primaryImageOfPage" src="img/veganmeatmarket_logo.png" width="800" height="240" alt="Vegan Meat Market logo, with text plus small piggie in the leaves">
+
+		<!--site navigation
+		Note that the page file names MUST match those lised in sitemap.xml. We also label by
+		ARIA roles
+		Microdata (breadcrumb)
+		-->
+		<nav role="navigation" aria-labelledby="website-navigation">
+			<h2 id="website-navigation">Website Navigation Menu</h2>
+			<ul role="menu" itemprop="breadcrumb">
+				<li><a href="index.html" title="Vegan Meat Market Home Page">Home</a></li>
+				<li><a href="about.html" title="About the Creators">About Us</a></li>
+				<li><a href="contact.html" title="Contact the Vegan Meat Market Team">Contact Us</a></li>	
+			</ul>
+		</nav>
+
+	</header>
+
+	<!-- ********************** MAIN SCREENS *********************************
+	the main element is for wrapping all content expanding on 
+	the main topic of the document, in this case, all the game screens
+	@link http://html5doctor.com/the-main-element/
+	-->
+	<main id="contact-us" role="main">
+
+		<h2>Let Us Know What You Want...</h2>
+
+		<!--contact form-->
+		<form>
+
+			<label for="your-name">Your Name</label>
+			<input type="text" name="your-name" id="your-name">
+
+			<label for="your-email">Your Email</label>
+			<input type="text" name="your-email" id="your-email">
+
+			<label for="your-comments">Comments</label>
+			<textarea name="your-comments" id="your-contents" rows="10" cols="60"></textarea>
+
+			<label for="subb">Submit:</label>
+			<input type="submit" name="subb" id="subb" value="Submit">
+
+
+		</form>
+
+	</main>
+
+	<!-- ********************** START OF FOOTER ******************************
+	site credits, copyright, second nav system. This area is also marked up with Schema.org
+	microdata
+	-->
+	<footer role="contentinfo">
+
+		<h2>Page Footer</h2>
+
+		<!--about the designers at Plyojump, who run Vegan Meat Market Games as one of their projects-->
+		<section itemscope itemtype="http://schema.org/Organization">
+			<h3>Contact Info</h3>
+			<p><span itemprop="suborganization">Vegan Meat Market Games</span> is a subsidary of <span itemprop="name">Plyojump</span>.</p>
+			<address>
+				<em class="fn">
+					<a itemprop="url" title="Plyojump - Where Robots learn to jump" href="#">Plyojump, Where Robots Jump</a>
+					<a itemprop="email" title="email plyojump" href="#">pindiespace@gmail.com</a>
+				</em>
+			</address>
+		</section>
+
+		<!--Website (NOT application) last updated, should be re-written later using 
+		document.lastModified property of JavaScript or on 
+		the servr-side.
+		example: var oLastModif = new Date(document.lastModified);
+		@link https://developer.mozilla.org/en-US/docs/Web/API/document.lastModified
+		-->
+		<section>
+			<h3>Last Updated</h3>
+			<p>
+				<time datetime="2014-10-04" class="published updated">Last updated November 4th, 2014</time>
+			</p>
+		</section>
+
+	</footer>
+
+	<!-- *********************** END OF VISIBLE PAGE ************************ 
+	JavaScripts
+	-->
+
+
+</body>
+</html>
+
+
+	<!-- *********************** END OF VISIBLE PAGE ************************ 
+	JavaScripts
+	-->
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+/** 
+ * @fileOverview
+ * OldIE.css
+ * styles applying only to Internet Explorer 6,7,8
+ * loaded via an IE condtional comment in index.html
+ * @link http://www.virtuosimedia.com/dev/css/ultimate-ie6-cheatsheet-how-to-fix-25-internet-explorer-6-bugs
+ * @link http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/
+ */
+
+
+/*
+ * Clearfix adjustement For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* inline-block fix for nav menu */
+.header nav ul li {
+	zoom: 1;
+	*display: inline; /* ie7 */
+	_height: 1.1em; /* ie6 */
+	padding-top:1em;
+}
+
+/* install-screen is impossible for old IE, so don't use */
+
+/* IE6 doesn't recognize child '>' selector, so kludge here */
+#screen-splash {
+	width:97%;
+	margin:0.75em auto;
+	text-align:center;
+}
+
+#screen-splash header {
+	margin:1em;
+}
+
+#screen-splash nav {
+	margin-bottom:1em;
+}
+
+#screen-splash nav ul {
+	margin:0;
+}
