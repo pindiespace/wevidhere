@@ -1,7 +1,7 @@
-wevidhere
-=========
+wevidhere README
+=================
 
-advanced web application incorporating client side programming. Applies the following techniques and principles:
+An advanced web application incorporating client side programming. Applies the following techniques and principles:
 
 1. Semantic HTML5 Programming
 2. Microdata (Google model)
@@ -12,4 +12,7 @@ advanced web application incorporating client side programming. Applies the foll
 7. Single-page design (CSS style changes used to show screens)
 
 =====================================================================
+
+Sample at: http://plyojump.com/projects/veganmeatmarket/wevidhere
+
 
