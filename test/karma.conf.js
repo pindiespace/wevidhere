@@ -15,12 +15,13 @@ module.exports = function(config) {
 
 
     //list of files / patterns to load in the browser
+    //angularjs is redundant due to pattern, but left in to illustrate
     files: [
-      '../bower_components/angular/angular.js',
-      '../bower_components/angular-route/angular-route.js',
-      '../bower_components/angular-resource/angular-resource.js',
-      '../bower_components/angular-animate/angular-animate.js',
-      '../bower_components/angular-mocks/angular-mocks.js',
+      '../public/js/lib/bower_components/angular/angular.js',
+      '../public/js/lib/bower_components/angular-route/angular-route.js',
+      '../public/js/lib/bower_components/angular-resource/angular-resource.js',
+      '../public/js/lib/bower_components/angular-animate/angular-animate.js',
+      '../public/js/lib/bower_components/angular-mocks/angular-mocks.js',
 
        {pattern: '../public/img/**/*.png', watched: false, included: false, served: true},
        {pattern: '../public/img/**/*.gif', watched: false, included: false, served: true},        

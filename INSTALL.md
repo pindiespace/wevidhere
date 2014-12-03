@@ -24,10 +24,13 @@ Part I: Setting Up Your Local Computer
 	- Put your current folder holding all your HTML, JS, CSS and other files into this folder. 
 	- Name it "public"
 
-5.	Add the following files from the default repository
-	- "package.json"
-	- "bower.json"
-	- ".gitignore"
+5.	Add the following files and folders from the default repository
+
+	package.json
+	bower.json
+	.gitignore
+	.bowerrc
+	/test
 
 6.	Edit "repository" in "package.json" to reflect your git default project directory
 
