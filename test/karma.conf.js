@@ -26,7 +26,7 @@ module.exports = function(config) {
        {pattern: '../public/img/**/*.png', watched: false, included: false, served: true},
        {pattern: '../public/img/**/*.gif', watched: false, included: false, served: true},        
        {pattern: '../public/js/lib/*.js', watched: false, included:false, served: true},
-       {pattern: '../public/js/NetCommon.js', watched: false, included:false, served: true},
+       {pattern: '../public/js/NetCommon.js', watched: true, included:true, served: true},
        {pattern: '../public/js/WeVidHere.js', watched: true, included:false, served: true},
        {pattern: '../public/js/*.js', watched: true, included:false, served: true},
       'unit/*.js'
