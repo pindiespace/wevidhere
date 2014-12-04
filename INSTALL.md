@@ -75,6 +75,9 @@ Part I: Setting Up Your Local Computer
 			(when using a remote server, your command will be)
 
 			git clone https://github.com/username/path/to/repository
+			
+			(alternate)
+			git remote add origin https://github.com/username/path/to/repository
 
 		g. Add all your files
 
@@ -84,6 +87,9 @@ Part I: Setting Up Your Local Computer
 
 			git commit -m "My Commit message here"
 			git push origin master
+			
+		   in some cases, you may have to use the following:
+		   	git push origin HEAD:master
 
 10. Setup Your Localhost
 	a. In your terminal, cd to your default directory
