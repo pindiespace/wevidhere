@@ -1,0 +1,26 @@
+[
+      { 
+        "name": "Slam Thunderhide",
+        "email": "slam@thunderhide.com",
+        "status": "lame",
+        "online": "false"
+      },
+      {
+        "name": "Nobra Flatswell",
+        "email": "nobra@flatswell.com",
+        "status": "wizard",
+        "online": "true"
+      },
+      {
+        "name": "Beef Tallowe",
+        "email": "beef@tallowe.com",
+        "status": "average",
+        "online": "false"
+      },
+      {
+        "name": "Dane Cook",
+        "email": "dane@cook.com",
+        "status": "lame",
+        "online": "false"
+      }
+  ]

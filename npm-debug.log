@@ -1,30 +1,20 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'start' ]
+1 verbose cli   'install' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
 4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
-5 verbose run-script [ 'prestart', 'start', 'poststart' ]
-6 info prestart wevidhere@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info start wevidhere@0.0.0
-9 verbose unsafe-perm in lifecycle true
-10 info wevidhere@0.0.0 Failed to exec start script
-11 error wevidhere@0.0.0 start: `http-server -a 0.0.0.0 -p 8000`
-11 error Exit status 8
-12 error Failed at the wevidhere@0.0.0 start script.
-12 error This is most likely a problem with the wevidhere package,
-12 error not with npm itself.
-12 error Tell the author that this fails on your system:
-12 error     http-server -a 0.0.0.0 -p 8000
-12 error You can get their info via:
-12 error     npm owner ls wevidhere
-12 error There is likely additional logging output above.
-13 error System Windows_NT 6.1.7601
-14 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-15 error cwd D:\special topics\projects\vmm\wevidhere
-16 error node -v v0.10.33
-17 error npm -v 1.4.28
-18 error code ELIFECYCLE
-19 verbose exit [ 1, true ]
+5 error Error: ENOENT, stat 'C:\Users\instructor\AppData\Roaming\npm'
+6 error If you need help, you may report this *entire* log,
+6 error including the npm and node versions, at:
+6 error     <http://github.com/npm/npm/issues>
+7 error System Windows_NT 6.1.7601
+8 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+9 error cwd D:\special topics\projects\WeVidHere
+10 error node -v v0.10.33
+11 error npm -v 1.4.28
+12 error path C:\Users\instructor\AppData\Roaming\npm
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]

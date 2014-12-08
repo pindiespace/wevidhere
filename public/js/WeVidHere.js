@@ -110,7 +110,7 @@ window.WeVidHere = (window.WeVidHere || (function () {
 	 * loaded by the application. 
 	 */
 	function appComplete (callbackFn) {
-		console.log("Entering appComplete");
+		//console.log("Entering appComplete");
 		
 		//KLUDGE: so we can use it independently of DOMReady()
 		if(!callbackFn) callbackFn = run;

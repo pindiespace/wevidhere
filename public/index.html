@@ -1,1967 +1,999 @@
 <!DOCTYPE HTML>
-
-
-
 <!-- 
-
 should be above doctype, if used
-
 <?php header("Access-Control-Allow-Origin: *"); ?>
-
 -->
-
-
-
 <html lang="en-US">
-
 <!--needed for Facebook Open Graph Protocol
-
 @link http://ogp.me/
-
 @link https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object
-
 -->
-
-
-
 <head prefix="og: http://ogp.me/ns#">
-
 <!--support Unicode characters
-
 	NOTE: Must be in first 1024 characters of the file
-
 	-->
-
     
-
 	<meta charset="utf-8">
-
 <!--
-
 	NOTE: to avoid headaches, don't add the HTML5 Manifest to the HTML element until you are done
-
 	manifest="wevidhere.appcache"
-
 	IMPORTANT: In Chrome, you can clear a bad application cache by:
-
 	1. Type the URL: chrome://appcache-internals/
-
 	2. look for your cache
-
 	3. delete it
-
 	@link http://blog.tcs.de/clear-flush-cache-manifest-file-in-chrome/
-
 	IMPORTANT: make sure you install a 'cache buster' program during appcache
-
 	development
-
 	@link https://chrome.google.com/webstore/detail/cache-killer/jpfbieopdmepaolggioebjmedmclkbap
-
 	@link https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md
-
 	extinct meta tags 
-
 	@link http://stackoverflow.com/questions/24662220/html5-global-metatags-style-for-mobile-app
-
 	-->
-
 <!--prefetch Google Font CDN and other APIs
-
 	@link https://developer.mozilla.org/en-US/docs/Controlling_DNS_prefetching 
-
 	-->
-
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
-
 	 
-
 <!--favicon, in all browsers after IE5-->
-
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
 	
-
 <!--larger favicons for modern browsers
-
 	generated using Real Favicon Generator
-
 	@link http://realfavicongenerator.net/
-
 	-->
-
 	<link rel="icon" type="image/png" href="img/icon/favicon-192x192.png" sizes="192x192">
-
 	<link rel="icon" type="image/png" href="img/icon/favicon-160x160.png" sizes="160x160">
-
 	<link rel="icon" type="image/png" href="img/icon/favicon-96x96.png" sizes="96x96">
-
 	<link rel="icon" type="image/png" href="img/icon/favicon-16x16.png" sizes="16x16">
-
 	<link rel="icon" type="image/png" href="img/icon/favicon-32x32.png" sizes="32x32">
-
 	
-
 <!--set the viewport. Required to prevent page from scaling on mobile devices. Note how multiple variables in many meta tags are set apart by commas-->
-
 	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 	
-
 <!-- ***************************** SPECIFIC TO iOS *********************************** -->
-
-
-
 <!-- run in full-screen mode on iOS, allow save to desktop -->
-
 	<meta name="apple-mobile-web-app-capable" content="yes">
-
 <!--Make the iOS status bar black with white text-->
-
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
  
-
 <!--customize iOS home screen title-->
-
 	<meta name="apple-mobile-web-app-title" content="WeVidHere">
-
 <!--disable iOS phone number detection-->
-
 	<meta name="format-detection" content="telephone=no">
-
 	
-
 <!--touch icons. iOS, but most other mobiles will use them. If you use a different rel:
-
 	rel="apple-touch-icon-precomposed" instead of rel="apple-touch-icon", 
-
 	then iOS won't add a gloss to your icon
-
 	generated using Real Favicon Generator
-
 	@link http://realfavicongenerator.net/
-
 	-->
-
 	<link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-touch-icon-57x57.png">
-
 	<link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-touch-icon-114x114.png">
-
 	<link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-touch-icon-72x72.png">
-
 	<link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-touch-icon-144x144.png">
-
 	<link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-touch-icon-60x60.png">
-
 	<link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-touch-icon-120x120.png">
-
 	<link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-touch-icon-76x76.png">
-
 	<link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-touch-icon-152x152.png">
-
 	<link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon-180x180.png">
 
 <!--splash screens, sizes used from Hugesconnect. Note that we did NOT include the very larger retina sizes
-
 	NOTE: use of CSS Media queries to detect screen dimensions and orientation.
-
 	IMPORTANT: this will cause W3C markup validator to FAIL (incorrectly). So, we've substituted a min-resolution query, is IS part of the CSS Media Query standard. It is less future friendly, but avoids the nonstandard nature of the apple retina media query:
-
 	@link http://brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
-
 	in JavaScript, use window.devicePixelRatio
-
 	some startup images at:
-
 	@link http://blog.hughesconnect.com/?p=282
-
 	iOS 7 configuration at:
-
 	@link https://gist.github.com/tfausak/2222823
-
 	-->
-
 	<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait-1536x2008.png"
-
 			media="(device-width: 768px) and (device-height: 1024px) 
-
 					and (orientation: portrait) 
-
 					and (min-resolution:192dpi)"><!-- webkit-device-pixel-ratio:2 -->
-
  
-
 <!-- iOS 6 & 7 iPad (retina, landscape) -->
-
 	<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape-1496x2048.png"
-
 			media="(device-width: 768px) and (device-height: 1024px) 
-
                  and (orientation: landscape) 
-
                  and (min-resolution:192dpi)"><!-- webkit-device-pixel-ratio:2 -->
-
 <!-- iPad (landscape non-retina)-->
-
 	<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape-748x1024.png" 
-
 			media="(device-width: 768px) 
-
 				and (orientation: landscape)"><!-- webkit-device-pixel-ration:1 -->
-
 <!-- iPad (portrait non-retina)-->
-
 	<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait-768x1004.png" 
-
 			media="(device-width: 768px) 
-
 				and (orientation: portrait)"><!-- webkit-device-pixel-ration:1 -->
-
 <!-- iOS 6 & 7 iPhone 5 -->
-
 	<link rel="apple-touch-startup-image" href="img/splash/iphone-retina-640x1096.png"
-
 			media="(device-width: 320px) and (device-height: 568px) 
-
 				and (min-resolution:192dpi)"><!-- webkit-device-pixel-ratio:2 -->
-
  
-
 <!-- iOS 6 & 7 iPhone (retina) -->
-
 	<link rel="apple-touch-startup-image" href="img/splash/iphone-retina-640x920.png"
-
 			media="(device-width: 320px) and (device-height: 480px) 
-
 				and (min-resolution:192dpi)"><!-- webkit-device-pixel-ratio:2 -->
-
  
-
 <!-- iOS 6 iPhone -->
-
 	<link rel="apple-touch-startup-image" href="img/splash/iphone-portrait-320x460.png"
-
 			media="(device-width: 320px) and (device-height: 480px)"><!-- webkit-device-pixel-ration:1 -->
-
             
-
 <!-- *************************** SPECIFIC TO ANDROID ********************8***************** -->
-
 	<!--Android versions (simpler, but must hand-generate)
-
 	@link http://www.csharpfritz.com/blog/2014/8/12/ultimate-guide-to-mobile-web-icon-markup
-
 	-->
-
     
-
 <!--run in full screen mode on Android-->
-
 	<meta name="mobile-web-app-capable" content="yes">
-
 	<!--high resolution android-->
-
 	<link rel="icon" sizes="196x196" href="img/icon/android-touch-icon-196x196.png">
-
 	<link rel="icon" sizes="128x128" href="img/icon/android-touch-icon-128x128.png">
-
 	
-
 <!-- ********************** SPECIFIC TO WIN8 AND WINDOWS MOBILE ************************** -->
-
 	<!--windows 8 and windows mobile versions
-
 	@link http://monkeyweekend.wordpress.com/2013/07/21/customize-your-websites-tile-in-windows-8-and-windows-8-1-preview-and-your-websites-icon-in-ios/
-
 	@link http://www.csharpfritz.com/blog/2014/8/12/ultimate-guide-to-mobile-web-icon-markup
-
 	-->
-
 	
-
 <!--provide a title for the app-->
-
 	<meta name="application-name" content="WeVidHere">
-
 	
-
 <!--disable the annoying tap highlighting thing in Windows phones-->
-
 	<meta name="msapplication-tap-highlight" content="no">
-
 <!--win8.0 image tile for pinning to tile display
-
 	the tiles for Win 8.1, IE11 and greater are defined in browserconfig.xml
-
 	@link http://msdn.microsoft.com/en-us/library/ie/dn455106(v=vs.85).aspx-->
-
 	<meta name="msapplication-TileImage" content="img/icon/mstile-144x144.png">
-
 	<!--background color-->
-
 	<meta name="msapplication-TileColor" content="#00aba9">
-
 	<!--NOTE we did not include the complex msnotification meta tag data-->
-
 	
-
 <!--used by older Palm, AvantGo, Blackberry phones-->
-
 	<meta name="HandheldFriendly" content="True">
-
 	
-
 <!--used by ancient Microsoft PocketPC phones-->
-
 	<meta name="MobileOptimized" content="320">
-
 	
-
 <!--SEO data-->
-
 	<meta name="description" content="Vegan Meat Market presents WeVidHere, and app which lets people find each other in a social sharing network, and link updates of their personal audio, video and secrets">
-
 	
-
 <!--display title in window-->
-
 	<title>Vegan Meat Market Games - WeVidHere</title>
-
 	
-
 <!--help search engines manage sites with query strings
-
 	@link http://moz.com/blog/canonical-url-tag-the-most-important-advancement-in-seo-practices-since-sitemaps
-
 	-->
-
 	<link rel="canonical" href="http://plyojump.com/projects/veganmeatmarket/wevidhere">
-
 	
-
 <!--facebook Open Graph data
-
 	(under social networks, supported by Facebook and Linkedin)
-
 	@link https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object
-
 	@link https://developers.facebook.com/docs/sharing/best-practices
-
 	validate at
-
 	@link https://developers.facebook.com/tools/debug/
-
 	Linkedin
-
 	@link https://developer.linkedin.com/documents/setting-display-tags-shares
-
 	-->
-
 	<meta property="og:url" content="http://plyojump.com/projects/veganmeatmarket/wevidhere">
-
 	<meta property="og:locale" content="en_US">
-
 	<meta property="og:title" content="WeVidHere by Vegan Meat Market">
-
 	<meta property="og:description" content="Vegan Meat Market presents WeVidHere, and app which lets people find each other in a social sharing network, and link updates of their personal audio, video and secrets.">
-
 	<meta property="og:image" content="http://plyojump.com/projects/veganmeatmarket/wevidhere/img/logo.png">
-
 	
-
 <!--Twitter card data
-
 	@link https://dev.twitter.com/cards/types/app
-
 	validate at
-
 	@link https://cards-dev.twitter.com/validator
-
 	-->
-
 	<meta name="twitter:card" content="summary_large_image">
-
 	<meta name="twitter:site" content="@pindiespace">
-
 	<meta name="twitter:creator" content="@pindiespace">
-
 	<meta name="twitter:title" content="WeVidHere by Vegan Meat Market">
-
 	<meta name="twitter:description" content="WeVidHere allows you to share your audio and video feeds in a gamelike environment, optimized and made accessible for all.">
-
 	<meta name="twitter:image:src" content="http://plyojump.com/projects/veganmeatmarket/wevidhere/img/icon/logo.png">
-
 	
-
 <!--Google+ authorship
-
 	@link https://blog.kissmetrics.com/google-authorship/
-
 	@link https://www.percussion.com/blog/2014/March/how-to-optimize-your-content-for-social-sharing-with-meta-tags
-
 	-->
-
 	<link href="http://google.com/+PeteMarkiewiczPlyojump" rel="author">
-
-
-
 <!-- ********************** EMBEDDED JAVASCRIPT ************************** -->
-
 	
-
 <!--if the web Console doesn't exist we'll crash our JS, so make a dummy version to catch commands 
-
 	inside of old browsers. We add the function 'logshow' which has to be put at the point where 
-
 	we want to see the current console messages. We also add a clear function to clear the console
-
 	-->
-
 	<script>
-
 		window.console = window.console || (function (str) {
-
 		
-
 		var log = function (str) {
-
 			if(!window.consolelist) {
-
 				window.consolelist = '';
-
 			}
-
 			window.consolelist += str + "\n";
-
 		}
-
 		
-
 		var logshow = function () { 
-
 			alert(window.consolelist);
-
 			clear();
-
 		}
-
 		/**
-
   		 * Simplified version of http://eriwen.com/javascript/js-stack-trace/
-
   		 */
-
   		function trace () {
-
     		try {
-
       			i.dont.exist++;
-
     		} catch(e) {
-
       			var stack = e.stack || e.stacktrace;
-
       			if (stack) {
-
         			try {
-
           				stack = stack.split('\n').slice(2).join('\n');
-
         			} catch (err) {}
-
         			log(stack);
-
       			}
-
     		}
-
  		 };
-
  		function clear () {
-
  			window.consolelist = "";
-
  		}
-
 		return {
-
 			log: log,
-
 			trace:trace,
-
 			logshow: logshow
-
 		}
-
 	})();
-
 	</script>
-
 	
-
 <!--Google Fonts CDN, if available. If the CDN is unavailable, a local copy should be used instead. 
-
 	Test typefaces in Typecast
-
 	@link http://typecast.com/
-
 	Our Fonts:
-
 	@link https://www.google.com/fonts/specimen/Englebert
-
 	@link http://fortawesome.github.io/Font-Awesome/
-
 	NOTE: we had to edit the Font Awesome CSS since we put it in a different directory than default
-
 	Tutorial used:
-
 	http://www.sitepoint.com/improve-page-performance-font-loader/
-
 	Description of Google Fonts CDN
-
 	@link https://developers.google.com/fonts/docs/getting_started
-
 	@link https://github.com/typekit/webfontloader
-
 	Fallbacks
-
 	@link https://github.com/typekit/webfontloader/issues/172
-
 	HOTE: WebFont dynamically adds the following styles to the HTML element, so we can temporarily style 
-
 	any font with a fallback System font before load, avoiding a FOUT (flash of unstyled content)
-
 	.wf-loading
-
 	.wf-active
-
 	.wf-inactive
-
 	TODO: convert http:// to // in the Font Awesome and Engelbert load below
-
 	NOT USED:
-
 	<link href="http://fonts.googleapis.com/css?family=Englebert" rel="stylesheet" type="text/css">
-
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
-
 	<script src="http://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-
 	-->
-
 	<script>
-
 		var WebFontConfig = {
-
     		google: {
-
 				families: ['Englebert']
-
     		},
-
 			custom: {
-
 					families: ['FontAwesome'],
-
 					urls: ['http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css']
-
 			},
-
     		timeout: 2000,
-
 			loading: function() {
-
 				console.log('webfonts loading');
-
 			},
-
 			active: function() {
-
 				console.log('webfonts active');
-
 				if(typeof WeVidHere !== undefined) {
-
 					WebFont.done = true;
-
 				}
-
 			},
-
 			inactive: function() {
-
 				//our local webhost fallbacks if the CDN doesn't work
-
 				//console.log('webfont file inactive, loading local');
-
 				WebFont.load({
-
 						custom: {
-
 							families: ['Englebert', 'FontAwesome'],
-
 							urls: ['css/fonts/local-fonts.css', 'css/fonts/font-awesome.css']
-
 							}
-
 						});
-
 						//KLUDGE
-
 						WebFont.done = true;
-
   			}
-
 		};
-
  
-
  		//async loading of the Google Webfonts library
-
 		(function() {
-
 			var wf = document.createElement("script");
-
 			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-
 	    		'://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
-
 			wf.async = 'true';
-
 			//changed from document.head for benefit of browsers (ie8) that don't define it
-
 			document.getElementsByTagName('head')[0].appendChild(wf);
-
 		})();
-
 	</script>
-
 	
-
 <!--CSS STYLESHEETS AND JAVASCRIPT FOR OLD IE
-
 	FIX old IE with a conditional comment
-
 	NOTE: old versions of IE allowed conditional loading by writing expressions inside HTML 
-
 	comments. This is not supported after IE9. We include it here to style older browsers, 
-
 	even if the only purpose is to display error messages that they can't run the game
-
 	ES5 DOM Shim
-
 	@link https://github.com/termi/ES5-DOM-SHIM
-
 	-->
-
 	
-
 <!--Modernizr feature detection library. We load it VERY early since 
-
 	the incorporated HTML5Shim library is needed for the WebFonts code 
-
 	below, and IE 6-8 for document.createElement and related methods
-
 	@link http://www.modernizr.com
-
 	HeadJS loader, since yepnope has problems with old iOS and Android
-
 	@link http://http://headjs.com/site/download.html
-
 	-->
-
 	<script src="js/lib/head-modernizr.js"></script>
-
 	
-
 <!--fix PNG display in ie6
-
 	@link http://24ways.org/2007/supersleight-transparent-png-in-ie6/
-
 	IE6 puts a lame blue background into PNG files. Fix it
-
 	-->
-
 	<!--[if lte IE 6]>
-
 	<script>
-
 	head.load(
-
 		'js/lib/supersleight-min.js',
-
 		function () {
-
 			supersleight.limitTo('page-header');
-
 			supersleight.init();
-
 		}
-
 	);
-
 	</script>
-
 	<![endif]-->
-
 	
-
 <!--shim old IE versions with modern features, mostly CSS fixes
-
 	Did NOT use IE7.js, IE8.js or IE9.js (easier to fix the few 
-
 	problems directly)
-
 	@link http://ie7-js.googlecode.com/svn/test/index.html
-
 	Project Page
-
 	@link http://www.charlescooke.me.uk/web/lab_notes/ie7_script.html
-
 	NOTE: if we need JS polyfills, (not currently applied)
-
 	@link https://github.com/jonathantneal/polyfill
-
 	-->
-
 	
-
 <!-- ********************** CSS STYLESHEETS ************************** -->
-
-
-
 <!--normalize styles between browsers-->
-
 	<link rel="stylesheet" href="css/normalize.css">
-
 <!--app specific styles-->
-
 	<link rel="stylesheet" href="css/styles.css">
-
 <!--responsive styles-->
-
 	<link rel="stylesheet" href="css/responsive.css">
-
 	<!--[if lte IE 7]>
-
 	<link rel="stylesheet" type="text/css" href="css/oldie.css" media="screen">
-
 	<![endif]-->
-
 	
-
 <!-- ********************** ADD CSS VENDOR PREFIXES ************************** -->
-
-
-
 <!--Prefix free lets us write our CSS without worrying about vendor prefixes
-
 	NOTE: causes Firefox to list 'not well-formed' CSS errors that don't exist
-
 	XHR cross-origin errors on Chrome
-
 		src="js/lib/prefixfree.min.js"
-
 	TODO: INSTALL AFTER EVERYTHING ELSE WORKS	
-
 	@link http://leaverou.github.io/prefixfree/
-
 	@link https://github.com/LeaVerou/prefixfree
-
 	-->
-
 	<script>
-
 		head.load('js/lib/prefixfree.min.js', 
-
 			function () {
-
 				console.log("prefixfree loaded");
-
 			}
-
 		);
-
 	</script>
-
 	
-
 <!-- ********************** CSS MEDIA QUERIES AND VIDEO POLYFILL ************************** -->
-
-
-
 <!--old IE has to run Respond (CSS media queries) early, and must also 
-
 	plug in the HTML5 video polyfill in the head region for it to work with IE8
-
 	RespondJS also needs to run AFTER the CSS has been loaded.
-
 	NOTE: this setup assumes that the CSS is NOT on a CDN
-
 	Modernizr tests
-
 	@link https://www.browserleaks.com/modernizr
-
 	RespondJS - CSS Media QUeries
-
 	@link http://modernizr.com/docs/#mq
-
 	@link https://github.com/scottjehl/Respond
-
 	For loading specific CSS files for given device widths
-
 	@link http://stackoverflow.com/questions/16279522/yepnope-modernizr-screen-width-conditions
-
 	VideoJS - HTML5 video player polyfill (uses Flash)
-
 	@link http://www.videojs.com/
-
 	@link https://github.com/videojs/video.js/blob/stable/docs/guides/setup.md
-
 	-->
-
 	<script>
-
 		if(!Modernizr.mq('only screen and (min-width:240px)')) {
-
 			console.log("using media query polyfill");
-
 			head.load(
-
 				'js/lib/respond.min.js',
-
 				function () {
-
 					console.log("respond.js loaded");
-
 				}
-
 			);
-
 		}
-
 		
-
 		if(!Modernizr.video) {	
-
 			console.log("loading video polyfill");
-
 			head.load(
-
 				'js/lib/video-js/video-js.css',
-
 				'js/lib/video-js/video.js',
-
 				function () {
-
 					console.log("video load complete videojs:" + typeof videojs);
-
 						console.log("using videojs polyfill");
-
 						//have to link the SWF file
-
   						videojs.options.flash.swf = "js/lib/video-js/video-js.swf";
-
 				}
-
 			); 
-
 		}
-
 		
-
 	</script>
-
 	
-
+	<!--angularJS needs to be in the head of the document-->
+	<script src="js/lib/angular/angular.js"></script><!--angularJS-->
+	<script src="js/ag-controllers.js"></script><!--our controllers-->
 	
-
 	<!--Add to Home Screen widget goes here
-
 	@link http://cubiq.org/add-to-home-screen
-
 	-->
-
 </head>
-
-
-
 <!--microdata describing this as a web page. 
-
 	The item properties allow us to define our ARIA support to search engines 
-
 	-->
-
 <body itemscope itemtype="http://schema.org/WebPage">
-
 	<!--accessiblity properties of this page
-
 		images have alt text
-
 		page can be read correcly via headings with screen readers
-
 		keyboard and mouse can both be used to navigate page
-
 		ARIA features implemented
-
 		@link http://www.w3.org/wiki/WebSchemas/Accessibility
-
 		-->
-
 	<meta itemprop="accessibilityFeature" content="alternativeText">
-
 	<meta itemprop="accessibilityFeature" content="readingOrder">
-
 	<meta itemprop="accessibilityControl" content="fullKeyboardControl">
-
 	<meta itemprop="accessibilityControl" content="fullMouseControl">
-
 	<meta itemprop="accessibilityAPI" content="ARIA">
-
 	<!-- ********************** BEGIN VISIBLE PAGE **************************
-
 		semantic elements after Mozilla MDN, following the Document Outline mode
-
 		@link https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document
-
 		@link http://html5doctor.com/element-index/
-
 		@link http://html5doctor.com/resources/#flowchart
-
 		Test with HTML5 Outliner:
-
 		@link https://gsnedders.html5.org/outliner/
-
 		Test with W3C Validator
-
 		@link http://validator.w3.org
-
 		ARIA role list
-
 		@link http://www.w3.org/TR/wai-aria/roles#document_structure_roles
-
 		ARIA design pattern list
-
 		@link http://www.w3.org/WAI/PF/aria-practices/#aria_ex
-
 	 	-->
-
 	<!--header on web wrapper, hidden when screen disappears note the use of ARIA role to 
-
 		define it to screen readers
-
 		@link http://www.paciellogroup.com/blog/2008/12/testing-wai-aria-role-support/
-
 		id=page-header is for supe
-
 		-->
-
 	<header id="page-header" class="header" role="banner">
-
 		<!--nested heading of topic for the whole page
-
 			we use CSS image replacement here for the h1
-
 			-->
-
 		<h1 itemprop="name" class="visible-screenreader">Vegan Meat Market Games</h1>
-
 		<img itemprop="primaryImageOfPage" class="img-responsive" src="img/veganmeatmarket_logo.png" width="800" height="240" alt="Vegan Meat Market logo, with text plus small piggie in the leaves">
-
 		<!--site navigation
-
 			Note that the page file names MUST match those lised in sitemap.xml. 
-
 			We also label by:
-
 			ARIA roles (W3C)
-
 			Microdata (Google schema.org)
-
 			-->
-
 		<nav role="navigation" aria-labelledby="website-navigation">
-
 			<h2 id="website-navigation" class="visible-screenreader">Website Navigation Menu</h2>
-
 			<ul role="menu" itemprop="breadcrumb">
-
 				<li><a href="index.html" title="Vegan Meat Market Home Page">Home</a></li>
-
 				<li><a href="about.html" title="About the Creators">About Us</a></li>
-
 				<li><a href="contact.html" title="Contact the Vegan Meat Market Team">Contact Us</a></li>	
-
 			</ul>
-
 		</nav>
-
 		
-
 		<!--short welcome message for incoming users-->
-
 		<aside id="welcome" role="note" itemprop="description">
-
 			<h3>Welcome!</h3>
-
 			<p>
-
 				Welcome to Vegan Meat Market, and Today's featured game. Vegan Meat Market is a subsidary of Plyojump, where robots learn to jump. Check back often for new featured games.
-
 			</p>
-
 		</aside>
-
 		
-
-		<!-- **************** NEW IN VERSION 3 - CSS MEDIA QUERY TESTER ***************** -->
-
-		<!-- **************** DEBUGGING ONLY ******************************************** -->
-
+		<!-- **************** NOTE: NEW IN VERSION 3 - CSS MEDIA QUERY TESTER ***************** -->
+		<!-- **************** NOTE: DEBUGGING ONLY ********************************************
 		<span class="mq"></span>
-
-		<!-- **************** DEBUGGING ONLY ******************************************** -->
-
-		<!-- **************** NEW IN VERSION 3 - CSS MEDIA QUERY TESTER ***************** -->
-
-		<!-- **************** NEW IN VERSION 3 - TOGGLE WEBFONTS ************************ -->
-
+		 -->
+		<!-- **************** NOTE: DEBUGGING ONLY ******************************************** -->
+		<!-- **************** NOTE: DEBUGGING ONLY ******************************************** -->
+		<!-- **************** NOTE: NEW IN VERSION 3 - CSS MEDIA QUERY TESTER ***************** -->
+		<!-- **************** NOTE: NEW IN VERSION 3 - TOGGLE WEBFONTS ************************ 
 		<button onclick="document.documentElement.classList.toggle('wf-active');return false;">toggle styles</button>
-
 		<i class="fa fa-camera-retro"></i> fa-camera-retro
-
-		<!-- **************** DEBUGGING ONLY ******************************************** -->
-
-	</header>
-
-	
-
-	<!-- ********************** MAIN SCREENS *********************************
-
-		the main element is for wrapping all content expanding on 
-
-		the main topic of the document, in this case, all the game screens
-
-		@link http://html5doctor.com/the-main-element/
-
-		NOTE: since the screens function as a big accordion, we put aria-hidden by default. 
-
-		When we add JavaScript, we will toggle aria-hidden=false to the screen presented. 
-
-		This prevents screen readers from reading all the screens, including those that are not accessible in a given program state.
-
-		NOTE: We added "WebGame" as a custom classification of this app (not in schema.org)
-
 		-->
+		<!-- **************** NOTE: DEBUGGING ONLY ******************************************** -->
+	</header>
+	
+	<!-- ********************** MAIN SCREENS *********************************
+		the main element is for wrapping all content expanding on 
+		the main topic of the document, in this case, all the game screens
+		@link http://html5doctor.com/the-main-element/
+		NOTE: since the screens function as a big accordion, we put aria-hidden by default. 
+		When we add JavaScript, we will toggle aria-hidden=false to the screen presented. 
+		This prevents screen readers from reading all the screens, including those that are not accessible in a given program state.
+		NOTE: We added "WebGame" as a custom classification of this app (not in schema.org)
+		NOTE: This is the start of ng-app
+		-->
+	<main id="screens" role="main" itemscope itemtype="http://schema.org/SoftwareApplication" ng-app="WeVidHere"><!--start of AngularJS-->
 
-	<main id="screens" role="main" itemscope itemtype="http://schema.org/SoftwareApplication">
+		<!-- **************** NOTE: DEBUGGING ONLY ******************************************** -->
+		<p>Nothing here {{'yet' + '!'}}</p>
+		<!-- **************** NOTE: DEBUGGING ONLY ******************************************** -->
 
-        
 
 		<!--hide this from users, but leave for text readers and search engines. Include 
-
 			author and version microdata
-
 			-->
-
 		<h2 itemprop="name" class="visible-screenreader">WeVidHere</h2>
-
 		<a itemprop="url" class="visible-screenreader" href="http://plyojump.com/projects"><span itemprop="author">Vegan Meat Market Games</span></a>
-
 		
-
 		<meta itemprop="softwareVersion" content="version 3">
-
 		<meta itemprop="datePublished" content="October 18, 2014">
-
 		<meta itemprop="contentRating" content="Low Maturity">
-
 		<!--hidden to all except search engines-->
-
 		<meta itemprop="applicationCategory" content="Game">
-
 		<meta itemprop="applicationsubcategory" content="Social Game">
-
                 
-
 		<!--INSTALL screen if we are running in standalone mode on Android, iOS-->
-
 		<article id="screen-install" class="screen visible-none" aria-hidden="true">
-
 			<header>
-
 				<img src="img/icon/apple-touch-icon-57x57.png" width="57" height="57" itemprop="image" alt="WeVidHere Logo">
-
 				<h2>WeVidHere<span class="visible-screenreader"> Install Screen</span></h2>
-
 				<p>
-
 				Click the <img src="img/icon/install-icon.png" alt="install button"> to install the game to the home screen of your device.
-
 				</p>
-
 			</header>
-
 		</article>
-
 		
-
 		<!--SPLASH screen on mobile, home screen on desktop-->
-
 		<article id="screen-splash" class="screen visible-none" aria-hidden="true">
-
 			<header>
-
 				<img src="img/icon/favicon-192x192.png" width="192" height="192" itemprop="image" alt="WeVidHere Logo">
-
 				<h2>WeVidHere<span class="visible-screenreader">Splash Screen</span></h2>
-
 			</header>
-
             
-
 			<!--options on splash. Both 'Register' and 'Login' go to the same link anchor since we are using a 'Lazy Registration' design pattern-->
-
 			<nav role="navigation" aria-labelledby="splash-screen-options">
-
 				<h3 id="splash-screen-options" class="visible-screenreader">Splash Screen Options</h3>
-
 					<ul role="menu">
-
 						<li><a href="#screen-config" title="login to the WeVidHere Game">Join Us</a></li>
-
 						<li><a href="#screen-help" title="WeVidHere Game Help Pages">Game Help</a></li>
-
 					</ul>
-
 			</nav>
-
 		</article>
-
         
-
 		<!--registation, login, configuration screen. We wrap the user name with a span class so it can be changed dynamically
-
 		class: user-name options:
-
 			'My'
-
 			Users Screen Name
-
 		NOTE: aria-hidden will need to be reset via JavaScript when this screen becomes available
-
 		-->
-
-		<article id="screen-config" class="screen visible-none" aria-hidden="true">
-
+		<article id="screen-config" class="screen visible-none" aria-hidden="true" ng-controller="WeVidHereConfig">
 			<header>
-
 				<h2>WeVidHere:<span class="user-name">Account</span> Settings</h2>
-
                 		<h3>by Vegan Meat Market</h3>
-
 			</header>
-
             
-
 			<!--user configuration (only some are visible at any one time). This acts functionally as an aside 
-
 			or callout, since it can appear as a popup window on a desktop, or a window replacing the entire 
-
 			screen (mobile). We use "fieldset" outside the forms because it is form-like, and doesn't have to 
-
 			be in a form according to the HTML5 spec
-
 			aria config from
-
 			@link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_dialog_role
-
 			-->
-
 			<!--private data, minimal for lazy registration. The system allows updates, but at a minimum 	
-
 			allows new users to have just a username, password to create an account
-
 			-->	
-
 			<fieldset id="config-reg-login">
 
+
+
+
+<form name="userForm" novalidate>
+  <div class="form-group" ng-repeat="user in formData.users">
+  <ng-form name="userFieldForm">
+    <label>{{ user.name }}</label>
+    <label if="{{ user.online }} == 'true'}"></label>
+  </ng-form>
+  </div>
+</form>
+
 					<legend>Login or Register</legend>
-
 					<!--describe form for screen readers-->
-
 					<p>Required information for WeVidHere</p>
-
-					<form role="dialog" id="login" aria-labelledby="name" aria-describedby="desc-private">
-
+					<form role="dialog" name="login" id="login" aria-labelledby="name" aria-describedby="desc-private">
 						<p id="desc-private">Provide your private name and password to continue</p>
-
 						<label for="name">Your Private User Name:</label>
-
 						<input type="text" name="name" id="name" required aria-required="true">
-
 						<label for="pass">Your Password (6 character minimum, no spaces):</label>
-
 						<input type="text" name="pass" id="pass" required aria-required="true">
-
 						
-
 						<!--this is initially hidden, and can be revealed by clicking a link added dynamically 
-
 						after the form is opened by screen-config.js
-
 						-->
-
 						<span id="config-first-time">
-
 							<label for="repeat-pass">Repeat Password:</label>
-
 							<input type="text" name="repeat-pass" id="repeat-pass">
-
 						</span>
-
 						
-
 						<!--this button will need to be changed based on whether the user 
-
 							has already registered 'Login' or 'Create Account', 
-
 							if user selects 'register' this button turns to 'register'
-
 							-->
-
 						<button name="reg-login-button" id="reg-login-button" type="button">Login</button>
-
 						<!--make this field invisible on relogin. We have to use a non-semantic tag, 'span'.
-
 						Since form fields are inline, we use an inline non-semantic tag to match
-
 						-->
-
 						<p><a id="reg-toggle-link" href="#screen-config">Register Instead</a></p>
-
 					</form>
-
 				</fieldset>
-
 				<!--public screen name, secret message, search terms. Because we are using a 'lazy registration 
-
 				design patterns, registration and login are the same screen, with parts shown to user based on their login state
-
 				-->	
-
 				<fieldset id="config-personality">
-
 					<legend>Personality</legend>
-
 						<form role="dialog" aria-labelledby="personality" aria-describedby="desc-public">
-
 						<p id="desc-public">Provide your public name, message, words, describing yourself</p>
-
 						<label for="personality">Your Screen Name</label>
-
 						<input type="text" name="personality" id="personality">
-
 						<!--additional configuration for later-->
-
 						<label for="secret">Your Secret Message</label>
-
 						<input type="text" name="secret" id="secret">
-
 						<!--tags that help others find you-->
-
 						<label for="keywords">List Words Describing Your Mood</label>
-
 						<input type="text" name="keywords" id="keywords">
-
 						<button name="config-personality-button" id="config-personality-button" type="button">Update</button>
-
 					</form>
-
 				</fieldset>
-
 				<!--avatar image. Anyone can upload one, and it appears when the webcam video feed is not enabled. 
-
 				It also appears in any public listing of other user's accounts
-
 				-->
-
 				<form role="dialog" aria-labelledby="avatar-img" aria-describedby="desc-image" method="post" enctype="multipart/form-data">
-
 					<fieldset id="config-image">
-
 					<legend>Avatar Image and Sound</legend>
-
 						<p id="desc-image">Upload an Avatar Image</p>
-
 						<label for="avatar-img">Your Avatar Image</label>
-
 						<!--shows the current avatar image, default if new-->
-
 						<img src="img/generic_avatar_01.png" alt="generic avatar" width="120" height="120">
-
 						<input type="file" name="avatar-img" id="avatar-img">
-
 						<button name="config-image-button" id="config-image-button" type="button">Upload Image</button>
-
 					</fieldset>
-
 				</form>
-
 				<!--avatar sound. Anyone can upload one-->
-
 				<form role="dialog" aria-labelledby="avatar-sound" aria-describedby="desc-sound" method="post" enctype="multipart/form-data">
-
 					<fieldset id="config-sound">
-
 						<legend>Upload A SOUND</legend>
-
 						<p id="desc-sound">Upload an Avatar Sound</p>
-
 						<label for="avatar-sound">Your Avatar Sound</label>
-
 						<audio controls>
-
 							<source src="snd/generic_avatar_01.ogg" type="audio/ogg">
-
 							<source src="snd/generic_avatar_01.mp3" type="audio/mpeg">
-
 							Your browser does not support the audio element.
-
 						</audio>
-
 						<input type="file" name="avatar-sound" id="avatar-sound">
-
 						<button name="config-sound-button" id="config-sound-button" type="button">Upload Sound</button>
-
 					</fieldset>
-
 				</form>
-
 				<!--optional webcam. Anyone can start up a webcam-->	
-
 				<form role="dialog" aria-labelledby="config-webcam-checkbox" aria-describedby="desc-webcam">
-
 					<fieldset id="config-webcam">
-
 						<legend>Activate Webcam</legend>	
-
 						<p id="desc-webcam">Use your Webcam for your Avatar Image</p>
-
 						<label for="config-webcam-checkbox">Activate Your WebCam</label>
-
 						<input name="config-webcam-checkbox" id="config-webcam-checkbox" type="checkbox">
-
 					</fieldset>
-
 				</form>
-
 				<!--optional microphone. Anyone can start up a microphone-->
-
 				<form role="dialog" aria-labelledby="config-mic-checkbox" aria-describedby="desc-mic">
-
 					<fieldset id="config-microphone">
-
 					<legend>Activate Microphone</legend>
-
 						<p id="desc-mic">Use your Microphone</p>
-
 						<label for="config-mic-checkbox">Activate Your Microphone</label>
-
 						<input name="config-mic-checkbox" id="config-mic-checkbox" type="checkbox">
-
 					</fieldset>
-
 				</form>
-
 				<!--field allowing all updates to be stored-->
-
 				<form>
-
 					<fieldset id="config-update">
-
 						<legend>Update Your Settings</legend>
-
 						<!--TODO: add update button -->
-
 						<button name="config-update-all" id="config-update-all">Update</button>             
-
 					</fieldset>
-
 				</form>
-
 		</article>
-
 		<!--game screen on mobile and desktop
-
 		NOTE: aria-hidden will need to be reset in JavaScript when visible
-
 		-->
-
 		<article id="screen-game" class="screen visible-none" aria-hidden="true">
-
 			<!--hidden, but present for text readers and search engines-->
-
 			
-
 			<header>
-
 				<h2>WeVidHere:Game Screen</h2>
-
                                 <h3>by Vegan Meat Market</h3>
-
 				<!--a window-title like bar above the <canvas> with controls-->
-
 				<nav id="game-control-panel">
-
 					<!--game access controls, including search, join leave-->
-
 					<h4 class="visible-screenreader">Game Controls</h4>
-
 					
-
 					<!--join/leave button-->
-
 					<form id="game-join" role="button" aria-labelledby="join-leave-button">
-
 						<fieldset>
-
 							<legend class="visible-screenreader">Join or Leave the Game</legend>
-
 							<label for="join-leave" id="join-leave-button">Join/Leave:</label>
-
 							<button type="button" name="join-leave" id="join-leave">Join Us</button>
-
                                                 </fieldset>
-
 					</form>
-
 					
-
 					<!--search form for others based on keywords-->
-
  					<form id="game-search" role="search">
-
                                        		<fieldset>
-
                                         		<legend class="visible-screenreader">Search Form</legend>
-
 							<label for="search-form">Search:</label>
-
 							<input type="text" name="search-form" id="search-form">
-
                                         	</fieldset>
-
 					</form>
-
                                         
-
 					<!--trident menu that leads to addition user configuration options
-
 					using Font Awesome icon-->
-
 					<nav id="game-nav" role="navigation" aria-labelledby="game-nav-title">
-
 						<i id="game-nav-trident" class="fa fa-bars"></i><!--selectable element trident Font Awesome-->
-
 						<h5 id="game-nav-title" class="visible-screenreader">Game Configuration Menu</h5>
-
 						<ul id="game-nav-menu" class="visible-screenreader" role="menu" >
-
 							<li><a href="#config-reg">Change Password</a></li>
-
 							<li><a href="#config-personality">Personality</a></li>
-
 							<li><a href="#config-image">Image</a></li>
-
 							<li><a href="#config-sound">Sound</a></li>
-
 							<li><a href="#config-webcam">Webcam and Mic</a></li>
-
 							<li><a href="#config-mic">Microphone</a></li>
-
 							<li><a href="#screen-help">Game Help</a></li>
-
+							<li><a href="#dialog-leave">Quit</a></li>
 						</ul>
-
 					</nav><!--end inner nav (trident)-->
-
 					
-
 				</nav><!--end top game control strip-->
-
 				
-
 					
-
 			</header>
-
 			
-
 			<!--HTML5 canvas tag goes inside this element. ARIA label 'application' used here since canvas allows 
-
 			nonstandard, game-like interaction. Elements move either with cursor keys, or with a mouse providing a 
-
 			direction to Brownian motion. We also have included a schema.org microdata label describing 
-
 			the game as  not-weblike Application
-
 			-->
-
 			<section id="game-app" role="application">
-
 				<!--form for updating your video and secret in real time  during the game. The word 'vid' in 
-
 				reading text is surrounded by a span element so it can be changed to audio, if the user 
-
 				is engaged in audio-only gameplay
-
 				vid vid-media type options:
-
 					Audio Stream
-
 					Webcam Stream
-
 				-->
-
 				<form id="game-app-streams" role="dialog" aria-labelledby="desc-latest-vid" aria-describedby="desc-latest-vid">
-
 					<fieldset>
-
 						<legend class="visible-screenreader">Update Video</legend>
-
 						<!--video stream start. note the use of the "track" tag to describe the video. This tag 
-
 							allows labeling scenes and sections of live video by timecode. For a constant webcam 
-
 							stream, this makes less sense so we just have a single caption present in the .vtt file
-
 							@link https://developer.mozilla.org/en-US/docs/Web/API/Web_Video_Text_Tracks_Format
-
 							NOTE: warnings if not uploaded, since we are violating CORS with 'webcam_caption.vtt'
-
 							-->					
-
 						<label for="video-on">Stream Your Current Video</label>
-
 						<video controls id="current-video" poster="img/generic_avatar_01.png">
-
 							<track kind="captions" src="vtt/webcam_caption.vtt" srclang="en" label="Webcam Note" default>
-
 							<img src="img/generic_avatar_01.png" alt="generic avatar" title="Your browser does not support HTML5 video" width="120" height="120">
-
 						</video>
-
 						<label for="video-on">On</label>
-
 						<input type="checkbox" name="video-on" id="video-on">
-
 					</fieldset>
-
-
-
 					<!--audio stream start. HTML5 audio players are more accessible that flash or quicktime, 
-
 						but to maximize access a custom javascript player would have to be written
-
 					-->
-
 					<fieldset>
-
 						<legend class="visible-screenreader">Update Audio</legend>
-
 						<label for="audio-on">Stream your Current Audio</label>	
-
 						<audio controls>
-
 							<source src="snd/generic_avatar_01.ogg" type="audio/ogg">
-
 							<source src="snd/generic_avatar_01.mp3" type="audio/mpeg">
-
 							<img src="img/no_audio.png" alt="no audio" title="Your browser does not support HTML5 audio">
-
 						</audio>
-
 						<label for="audio-on">On</label>
-
 						<input type="checkbox" id="audio-on" name="audio-on">
-
 					</fieldset>
-
 				</form>
-
 				
-
 				<!--location of the game canvas. For audio-only play, this canvas just shows sound signals, 
-
 				and each object creates an audio, rather than video presence
-
 				-->
-
 				<h3 class="visible-screenreader">Game Canvas Element</h3>
-
 				<!--canvas game surface attached here by JavaScript. Canvas shows a 2D space of user avatars, 
-
 				with image or video-based avatars. Users use keys to move, or click mouse, and watch 
-
 				their avatar move to that postion. With no user input, avatars undergo Brownian motion 
-
 				in the 2D space. Default to iphone portrait.
-
 				-->
-
 				<canvas id="game-app-canvas" width="320" height="200"></canvas>
-
 				
-
 			</section>
-
 			
-
 			<footer>
-
 				<nav id="game-control-panel-bottom">
-
 					<!--social network, implemented as row of avatars users have 'bumped' along bottom of canvas-->
-
 					<form id="game-bumped" itemscope>
-
 						<label for="post-bump">Who You Have Bumped</label>
-
 						<!--link social network list here dynamically. Shows image of avatars. itemListElement
-
 						* Clicking on image will show user info
-
 						* itemtype="http://schema.org/ItemList"
-
 						* itemtype="http://schema.org/Person"
-
 						* itemprop=name for name
-
 						* Double-clicking teleports the user nearby the other user
-
 						-->
-
 						<select id="post-bump" name="post-bump"></select>
-
 					</form>
-
 			
-
 					<!--secret message-->
-
 					<form id="game-update-secret-message">
-
 						<label for="post-secret">Update your Secret Message</label>
-
 						<input type="text" name="post-secret" id="post-secret">
-
 						<button type="button" id="post-vid">Post!</button>
-
 					</form>
-
 				</nav><!--end of bottom control strip-->
-
 				
-
 				<div style="clear:both;"></div><!--*************EEEK NON SEMANTIC CLEARING*************-->	
-
-
-
 			<footer>
-
 			
-
 			<!--clicking the close box on the canvas box, or selecting 'leave us' from a menu brings up this 
-
 				dialog, 'do you really want to leave us?' use 'alertdialog since this is a momentary, time-sensitive 
-
 				alert rather than a regular modal dialog like the config forms above
-
 				-->
-
 			<aside id="dialog-leave" class="visible-none">
-
 				<h3 id="leave">Checking if you really want to leave the game</h3>
-
 				<form id="form-leave" role="alertdialog" aria-labelledby="label-leave" aria-describedby="desc-leave">
-
 					<h4 id="label-leave">Do you Really Want to Leave Us?</h4>
-
 					<p id="desc-leave">We want you to stay with us</p>
-
 					<button>Buh-Bye</button>
-
 				</form>
-
 			</aside>
-
 		</article><!--end of screen-game-->
-
 		
-
 		<!--popup help dialog providing more info how to play the game
-
 			NOTE even when this main screen is visible, we want this invisible. If this alert 
-
 			is triggered, JavaScript needs to toggle aria-hidden back and forth. Help files are listed as microdata
-
 			-->
-
 		<aside id="screen-help" role="note" class="screen visible-none" aria-hidden="true" itemprop="about">
-
 			<h3>Game Help</h3>
-
 			<p>
-
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien augue, tempor nec dignissim vel, varius at tellus. Fusce non massa non sem feugiat condimentum in in magna. Nam a felis ut arcu accumsan tempor gravida ut diam. Donec molestie cursus lorem, in lacinia urna consequat a. Curabitur rhoncus quis lectus nec aliquet. 
-
 			</p>
-
 			<p>
-
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien augue, tempor nec dignissim vel, varius at tellus. Fusce non massa non sem feugiat condimentum in in magna. Nam a felis ut arcu accumsan tempor gravida ut diam. Donec molestie cursus lorem, in lacinia urna consequat a. Curabitur rhoncus quis lectus nec aliquet. 
-
 			</p>
-
 		</aside>
-
 		<!--exit screen, allows us to rejoin the game, or post a review-->
-
 		<article id="screen-exit" class="screen visible-none" aria-hidden="true">
-
 			<header>
-
 				<h2>WeVidHere:Game Exit</h2>
-
 			</header>
-
 			<form>
-
 				<button type="button">Join Us Again</button>
-
 				<button type="button">Post a Review</button>
-
 			</form>
-
 		</article>
-
 		<!--reviews and comments on the game
-
 		NOTE: aria-hidden needs to be reset in JavaScript
-
 		-->
-
 		<article id="screen-reviews" class="screen visible-none" aria-hidden="true" >
-
 			<header>
-
 				<h2>Reviews</h2>
-
                <h3>by Vegan Meat Market</h3>
-
 			</header>
-
 			<!--schema.org doesn't appear to have a way to label the entire screen of reviews, only the 
-
 				individual reviews, so we just say itemscope here
-
 				-->
-
 			<nav role="navigation" aria-labelledby="review-list" itemscope>
-
 				<h3 id="review-list">Review List</h3>
-
 				<!--first review. sections tags are like database records, so are appropriate here. 
-
 				We also include microdata from schema.org/review 
-
 				-->
-
 				<section itemprop="review" itemscope itemtype="http://schema.org/Review">
-
 					<h3 itemprop="reviewer">Bob Bottoms</h3>
-
 					<h4 itemprop="itemreviewed">WeVidHere</h4>
-
 					<h4 itemprop="summary">Something I liked</h4>
-
 					<img src="img/generic_avatar_01.png" alt="generic avatar icon" width="120" height="120">
-
 					<time itemprop="dtreviewed" datetime="2014-10-04">October 4, 2014</time>
-
 					<!--star widget-->
-
 					<h5>Rating:</h5> 
-
 					<p itemprop="rating">
-
 						<span itemprop="value">4</span> on a scale of 
-
 						<span itemprop="worst">10</span> to 
-
 						<span itemprop="best">10</span>
-
 					</p>
-
 					<p itemprop="description">
-
 					Donec molestie cursus lorem, in lacinia urna consequat a. Curabitur rhoncus quis lectus nec aliquet.
-
 					</p>
-
 				</section>
-
 				<!--second review-->
-
 				<section itemprop="review" itemscope itemtype="http://schema.org/Review">
-
 					<h3 itemprop="reviewer">Sally Toechomp</h3>
-
 					<h4 itemprop="summary">Something I hated</h4>
-
 					<img src="img/generic_avatar_01.png" alt="generic avatar icon" width="120" height="120">
-
 					<time itemprop="dtreviewed" datetime="2014-11-04">November 4, 2014</time>
-
 					<!--star widget-->
-
 					<h5>Rating:</h5> 
-
 					<p itemprop="rating">
-
 						<span itemprop="value">7</span> on a scale of 
-
 						<span itemprop="worst">0</span> to 
-
 						<span itemprop="best">10</span>
-
 					</p>
-
 					<p itemprop="description">
-
 					Fusce non massa non sem feugiat condimentum in in magna. Nam a felis ut arcu accumsan tempor gravida ut diam.
-
 					</p>
-
 				</section>
-
 			</nav>
-
 			
-
 			<!--submit your own review (not linked in top menus)-->
-
 			<form>
-
 				<h3>Post Your Review</h3>
-
 				<label for="review-name">Your Name:</label>
-
 				<input type="text" name="review-name" id="review-name">
-
 				<label for="review-comment">Comment:</label>
-
 				<textarea name="review-comment" id="review-comment" rows="4" cols="40"></textarea>
-
 				<button type="button">Submit Review</button>
-
 			</form>
-
 			
-
 		</article><!--end of reviews-->
-
 		
-
 	</main><!--end of application-->
-
 	
-
 	<!-- ********************** START OF FOOTER ******************************
-
 		site credits, copyright, second nav system. This area is also marked up with Schema.org 
-
 		microdata
-
 		-->
-
 	<footer id="page-footer" class="footer" role="contentinfo">
-
 		<h2>Page Footer</h2>
-
 		<!--about the designers at Plyojump, who run Vegan Meat Market Games as one of their projects-->
-
 		<section itemscope itemtype="http://schema.org/Organization">
-
 			<h3>Contact Info</h3>
-
 			<p><span itemprop="suborganization">Vegan Meat Market Games</span> is a subsidary of <span itemprop="name">Plyojump</span>.</p>
-
 			<address>
-
 				<em class="fn">
-
 					<a itemprop="url" title="Plyojump - Where Robots learn to jump" href="#">Plyojump, Where Robots Jump</a>
-
 					<a itemprop="email" title="email plyojump" href="#">pindiespace@gmail.com</a>
-
 				</em>
-
 			</address>
-
 		</section>
-
 		<!--Website (NOT application) last updated, should be re-written later using 
-
 		document.lastModified property of JavaScript or on 
-
 		the server-side.
-
 		example: var oLastModif = new Date(document.lastModified);
-
 		@link https://developer.mozilla.org/en-US/docs/Web/API/document.lastModified
-
 		-->
-
 		<section>
-
 			<h3>Last Updated</h3>
-
 			<p>
-
 				<time datetime="2014-10-04" class="published updated">Last updated November 4th, 2014</time>
-
 			</p>
-
 		</section>
-
 	</footer>
-
 	
-
 	<!-- *********************** END OF VISIBLE PAGE ************************ 
-
 	stuff that has to load after DOM here
-
 	common file between client and Node server goes here
-
 	-->
-
-
-
 	<!--format for dynamically-generated socket.io script goes here-->
-
 	<!--app file goes here-->
-
 	<script src="js/WeVidHere.js"></script>
-
 	<!--NOTE: all other javascript objects are dynamically 
-
 	loaded by the .loader object in WeVidHere
-
 	-->
-
 </body>
-
 </html>
