@@ -594,20 +594,26 @@ should be above doctype, if used
 			-->
 			<!--private data, minimal for lazy registration. The system allows updates, but at a minimum 	
 			allows new users to have just a username, password to create an account
+			@link http://lostechies.com/gabrielschenker/2014/05/13/angularjspart-16-forms/
 			-->	
-			<fieldset id="config-reg-login">
 
-
-
-
-<form name="userForm" novalidate>
+<form name="userForm" ng-submit="doLogin()" novalidate>
   <div class="form-group" ng-repeat="user in formData.users">
   <ng-form name="userFieldForm">
     <label>{{ user.name }}</label>
     <label if="{{ user.online }} == 'true'}"></label>
-  </ng-form>
   </div>
-</form>
+  <label for="un">USERNAME:</label>
+  <input type="text" ng-model="formData.username" name="username" id="username" required><br>
+  <label for="pw">PASSWORD:</label>
+  <input type="text" ng-model="formData.password" name="password" id="password" required><br>
+  <input type="submit" name="subb" value="SUB">
+</ng-form></form>
+</section>
+
+			<fieldset id="config-reg-login">
+
+			<section id="users-online-list">
 
 					<legend>Login or Register</legend>
 					<!--describe form for screen readers-->

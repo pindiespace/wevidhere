@@ -1,25 +1,30 @@
+
 [
       { 
         "name": "Slam Thunderhide",
         "email": "slam@thunderhide.com",
+        "password": "thunderhide",
         "status": "lame",
         "online": "false"
       },
       {
         "name": "Nobra Flatswell",
         "email": "nobra@flatswell.com",
+        "password": "flatswell",
         "status": "wizard",
         "online": "true"
       },
       {
         "name": "Beef Tallowe",
         "email": "beef@tallowe.com",
+        "password":"tallowe",
         "status": "average",
         "online": "false"
       },
       {
         "name": "Dane Cook",
         "email": "dane@cook.com",
+        "password":"cook",
         "status": "lame",
         "online": "false"
       }
