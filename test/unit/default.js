@@ -12,17 +12,16 @@ describe ('my test suite', function() {
     
     it('>>>BASIC KARMA TEST', function () {
     var bob = 10;
-    expect(bob).toBe(100);
+    expect(bob).toBe(10);
     }); //this should FAIL
 
     it('>>>COMMON TEST', function () {
-    	var phil = common;
-    	expect(typeof phil).toBe("object");
+    	expect(typeof common).toBe("object");
     });
+    
     
     it('>>>COMMON EXPORT', function () {
         var phil = common;
-        console.log('phil:' + typeof phil);
         expect( typeof phil.init ).toBe("function");
     });
 
