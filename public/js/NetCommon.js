@@ -36,13 +36,13 @@
 
 (function(exports){
 
-    function init () {
+    //test variable
+    exports.debug = true;
+    
+    //test function
+    exports.init = function () {
         console.log("in common.init function");
     }
-
-	exports = {
-		init:init
-	};
 
 
 	//the line below is required to export for the web browser
