@@ -29,7 +29,7 @@ module.exports = function(config) {
        {pattern: '../public/js/NetCommon.js', watched: true, included:true, served: true},
        {pattern: '../public/js/WeVidHere.js', watched: true, included:false, served: true},
        {pattern: '../public/js/*.js', watched: true, included:false, served: true},
-      'unit/*.js'
+        {pattern: 'unit/*.js', watched: true, included:false, served:true}
     ],
 
     // list of files to exclude

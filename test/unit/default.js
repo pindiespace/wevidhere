@@ -22,7 +22,8 @@ describe ('my test suite', function() {
     
     it('>>>COMMON EXPORT', function () {
         var phil = common;
-        expect( typeof phil ).toBe("function");
+        console.log('phil:' + typeof phil);
+        expect( typeof phil.init ).toBe("function");
     });
 
     afterEach(function () {

@@ -36,16 +36,16 @@
 
 (function(exports){
 
-
+    function init () {
+        console.log("in common.init function");
+    }
 
 	exports = {
-		init:true
+		init:init
 	};
 
 
-
 	//the line below is required to export for the web browser
-
 
 
 }(typeof exports === 'undefined' ? this.common = {} : exports));
