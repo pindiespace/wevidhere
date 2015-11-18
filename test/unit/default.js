@@ -18,7 +18,13 @@ describe ('my test suite', function() {
     it('>>>COMMON TEST', function () {
     	var phil = common;
     	expect(typeof phil).toBe("object");
-    })
+    });
+    
+    it('>>>COMMON EXPORT', function () {
+        var phil = common;
+        console.log('phil:' + typeof phil);
+        expect( typeof phil.init ).toBe("function");
+    });
 
     afterEach(function () {
  

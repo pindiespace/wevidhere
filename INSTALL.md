@@ -115,7 +115,26 @@ Part I: Setting Up Your Local Computer
 Part II: Configure Unit-Testing with Karma
 =======================================
 
+1. Navigate to home directory of project, and install karma: 
+    npm install -g karma --save-dev
+    npm install -g karma-cli --save-dev (fixes some problems)
+    
+    NOTE: you may have to go sudo with the following command:
+    
+    sudo su
+    password: your password here, it will not appear onscreen
+    
+2. Install jasmine
+    npm install jasmine --save-dev
+    npm install karma-jasmine --save-dev
 
+
+2. start karma using a configuration file. You can make your own, or use the interactive
+    config generator @link http://karma-runner.github.io/0.10/intro/configuration.html
+    
+    navigate to your config file, and type:
+    
+    karma start my.conf.js
 
 =======================================
 Part III: Configure End2End Testing with Protractor
